@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>For You ♡</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Stage 0: Welcome -->
+    <div class="stage active" id="stage-0">
+        <div class="center-content fade-in">
+            <div class="heart-icon">♡</div>
+            <h1 class="title">Happy Valentine's Day</h1>
+            <p class="subtitle">I made something for you...</p>
+            <button class="cta-btn" onclick="nextStage()">Open ♡</button>
+        </div>
+    </div>
+
+    <!-- Stage 1: Quiz Question 1 -->
+    <div class="stage" id="stage-1">
+        <div class="center-content">
+            <div class="question-number">01</div>
+            <div class="quiz-label">🎯 Quiz Time!</div>
+            <h2 class="question">¿Dónde fue la primera cita?</h2>
+            <div class="options">
+                <button class="option-btn" onclick="selectQuizAnswer(1, 'corriendo', false)">Corriendo</button>
+                <button class="option-btn" onclick="selectQuizAnswer(1, 'pizza', true)">🍕 Pizza & 🍷 Depa</button>
+                <button class="option-btn" onclick="selectQuizAnswer(1, 'fotos', false)">Tomando fotos</button>
+            </div>
+            <div class="answer-reveal" id="reveal-1"></div>
+        </div>
+    </div>
+
+    <!-- Stage 2: Quiz Question 2 -->
+    <div class="stage" id="stage-2">
+        <div class="center-content">
+            <div class="question-number">02</div>
+            <div class="quiz-label">🎯 Quiz Time!</div>
+            <h2 class="question">¿De qué marca es Red?</h2>
+            <div class="options">
+                <button class="option-btn" onclick="selectQuizAnswer(2, 'cannondale', false)">Cannondale</button>
+                <button class="option-btn" onclick="selectQuizAnswer(2, 'trek', false)">Trek</button>
+                <button class="option-btn" onclick="selectQuizAnswer(2, 'colnago', false)">Colnago</button>
+                <button class="option-btn" onclick="selectQuizAnswer(2, 'cube', false)">Cube</button>
+                <button class="option-btn" onclick="selectQuizAnswer(2, 'canyon', true)">Canyon</button>
+            </div>
+            <div class="answer-reveal" id="reveal-2"></div>
+        </div>
+    </div>
+
+    <!-- Stage 3: Quiz Question 3 -->
+    <div class="stage" id="stage-3">
+        <div class="center-content">
+            <div class="question-number">03</div>
+            <div class="quiz-label">🎯 Quiz Time!</div>
+            <h2 class="question">¿Cómo se dice lechuga en francés?</h2>
+            <div class="options">
+                <button class="option-btn" onclick="selectQuizAnswer(3, 'laitue', true)">Laitue</button>
+                <button class="option-btn" onclick="selectQuizAnswer(3, 'salade', false)">Salade</button>
+                <button class="option-btn" onclick="selectQuizAnswer(3, 'lait', false)">Lait</button>
+                <button class="option-btn" onclick="selectQuizAnswer(3, 'laiteux', false)">Laiteux</button>
+                <button class="option-btn" onclick="selectQuizAnswer(3, 'laitier', false)">Laitier</button>
+            </div>
+            <div class="answer-reveal" id="reveal-3"></div>
+        </div>
+    </div>
+
+    <!-- Stage 4: Quiz Question 1 -->
+    <div class="stage" id="stage-4">
+        <div class="center-content">
+            <div class="question-number">04</div>
+            <div class="quiz-label">🎯 Quiz Time!</div>
+            <h2 class="question">¿Cuál es tu apodo?</h2>
+            <div class="options">
+                <button class="option-btn" onclick="selectQuizAnswer(4, 'capibarini', false)">Capibarini</button>
+                <button class="option-btn" onclick="selectQuizAnswer(4, 'cocosini', false)">Capibarini Cocosini</button>
+                <button class="option-btn" onclick="selectQuizAnswer(4, 'grunon', false)">El gruñón de las montañas</button>
+                <button class="option-btn" onclick="selectQuizAnswer(4, 'tutti', true)">Capibarini Cocosini tutti li bambini</button>
+            </div>
+            <div class="answer-reveal" id="reveal-4"></div>
+        </div>
+    </div>
+
+    <!-- Stage 5: Quiz Question 2 -->
+    <div class="stage" id="stage-5">
+        <div class="center-content">
+            <div class="question-number">05</div>
+            <div class="quiz-label">🎯 Quiz Time!</div>
+            <h2 class="question">¿Apoco si le sabes? ¿Cuál es mi nombre intermedio?</h2>
+            <div class="options">
+                <button class="option-btn" onclick="selectQuizAnswer(5, 'pierre', true)">Pierre</button>
+                <button class="option-btn" onclick="selectQuizAnswer(5, 'jacques', false)">Jacques</button>
+                <button class="option-btn" onclick="selectQuizAnswer(5, 'paul', false)">Paul</button>
+            </div>
+            <div class="answer-reveal" id="reveal-5"></div>
+        </div>
+    </div>
+
+    <!-- Stage 6: Quiz Question 3 -->
+    <div class="stage" id="stage-6">
+        <div class="center-content">
+            <div class="question-number">06</div>
+            <div class="quiz-label">🎯 Quiz Time!</div>
+            <h2 class="question">¿Apoco si le sabes 2? ¿En qué parte de la mitocondria se hace la mayor producción de ATP?</h2>
+            <div class="options">
+                <button class="option-btn" onclick="selectQuizAnswer(6, 'externa', false)">Membrana externa</button>
+                <button class="option-btn" onclick="selectQuizAnswer(6, 'krebs', false)">En la matriz durante el ciclo de Krebs</button>
+                <button class="option-btn" onclick="selectQuizAnswer(6, 'interna', true)">En la membrana interna</button>
+                <button class="option-btn" onclick="selectQuizAnswer(6, 'citoplasma', false)">En el citoplasma durante glucólisis</button>
+                <button class="option-btn" onclick="selectQuizAnswer(6, 'adn', false)">En el ADN mitocondrial</button>
+            </div>
+            <div class="answer-reveal" id="reveal-6"></div>
+        </div>
+    </div>
+
+    <!-- Stage 7: Transition -->
+    <div class="stage" id="stage-7">
+        <div class="center-content">
+            <div class="heart-pulse">♡</div>
+            <h2 class="transition-text">Creating your wrapped...</h2>
+            <div class="loading-bar">
+                <div class="loading-fill"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Stage 8: Dashboard -->
+    <div class="stage dashboard-stage" id="stage-8">
+        <div class="dashboard-container">
+            <header class="dash-header">
+                <h1>Capibarini SV<span class="year">// 2026</span></h1>
+                <p class="tagline">San Valentin, by the numbers</p>
+            </header>
+
+            <div class="bento-grid">
+                <!-- Days Counter -->
+                <div class="bento-card days-card">
+                    <div class="card-label">Contando Capibaras:</div>
+                    <div class="time-display">
+                        <div class="time-unit">
+                            <div class="time-value" id="days">0</div>
+                            <div class="time-label">Days</div>
+                        </div>
+                        <div class="time-separator">:</div>
+                        <div class="time-unit">
+                            <div class="time-value" id="hours">00</div>
+                            <div class="time-label">Hours</div>
+                        </div>
+                        <div class="time-separator">:</div>
+                        <div class="time-unit">
+                            <div class="time-value" id="minutes">00</div>
+                            <div class="time-label">Minutes</div>
+                        </div>
+                        <div class="time-separator">:</div>
+                        <div class="time-unit">
+                            <div class="time-value" id="seconds">00</div>
+                            <div class="time-label">Seconds</div>
+                        </div>
+                    </div>
+                    <div class="card-sublabel"> </div>
+                </div>
+
+                <!-- Moments -->
+                <div class="bento-card moments-card">
+                    <div class="card-label">Moments</div>
+                    <div class="moment-list">
+                        <div class="moment-item">
+                            <div class="moment-header">
+                                <span class="moment-emoji">🎬</span>
+                                <span class="moment-text">Movie nights</span>
+                            </div>
+                            <div class="moment-bar-container">
+                                <div class="moment-bar" data-count="13" style="width: 0%;">
+                                    <span class="moment-count">13</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="moment-item">
+                            <div class="moment-header">
+                                <span class="moment-emoji">🍽️</span>
+                                <span class="moment-text">Cenas dates</span>
+                            </div>
+                            <div class="moment-bar-container">
+                                <div class="moment-bar" data-count="53" style="width: 0%;">
+                                    <span class="moment-count">53</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="moment-item">
+                            <div class="moment-header">
+                                <span class="moment-emoji">✈️</span>
+                                <span class="moment-text">Adventures</span>
+                            </div>
+                            <div class="moment-bar-container">
+                                <div class="moment-bar" data-count="12" style="width: 0%;">
+                                    <span class="moment-count">12</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="moment-item">
+                            <div class="moment-header">
+                                <span class="moment-emoji">😂</span>
+                                <span class="moment-text">Inside jokes</span>
+                            </div>
+                            <div class="moment-bar-container infinite">
+                                <div class="moment-bar infinite-bar" style="width: 100%;">
+                                    <span class="moment-count">∞</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quiz Score Card -->
+                <div class="bento-card quiz-score-card">
+                    <div class="card-label">Quiz Score</div>
+                    <div class="quiz-score-content">
+                        <div class="score-display">
+                            <span class="score-number" id="quiz-score">0</span>
+                            <span class="score-total">/6</span>
+                        </div>
+                        <div class="score-label" id="score-message">Loading...</div>
+                        <div class="score-emoji" id="score-emoji">🎯</div>
+                    </div>
+                </div>
+
+                <!-- Photo Gallery - Scratch Card -->
+                <div class="bento-card photo-card">
+                    <div class="card-label">Scratch to Reveal ♡</div>
+                    <div class="photo-grid">
+                        <div class="scratch-card" id="scratch-card">
+                            <div class="revealed-photo" id="revealed-photo">
+                                <img src="capibara.jpg" alt="Capibarini ♡">
+                            </div>
+                            <canvas id="scratch-canvas"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dinner Decider -->
+                <div class="bento-card dinner-card">
+                    <div class="card-label">Tonight's Dinner?</div>
+                    <button class="dinner-btn" id="decide-btn">
+                        <span class="btn-icon">🎲</span>
+                        <span>Decide for us</span>
+                    </button>
+                    <div class="dinner-result" id="result-text">Click to decide!</div>
+                </div>
+
+                <!-- Love Stats -->
+                <div class="bento-card stats-card">
+                    <div class="card-label">Love Metrics</div>
+                    <div class="stat-grid">
+                        <div class="stat-item">
+                            <div class="stat-value">100%</div>
+                            <div class="stat-name">Dando y Dando</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">∞</div>
+                            <div class="stat-name">Patience</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">24/7</div>
+                            <div class="stat-name">Molestando</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Trip Poll -->
+                <div class="bento-card future-card poll-card poll-card-centered">
+                    <div class="card-label">Próximo viaje a planear?</div>
+                    <div class="poll-options" id="poll-options">
+                        <button class="poll-option" onclick="votePoll('yosemite')">
+                            <span class="poll-option-text">🏔️ Yosemite</span>
+                            <div class="poll-bar-container">
+                                <div class="poll-bar" data-option="yosemite"></div>
+                            </div>
+                            <span class="poll-percentage" data-percentage="yosemite"></span>
+                        </button>
+                        <button class="poll-option" onclick="votePoll('canada')">
+                            <span class="poll-option-text">🍁 Canada West Coast</span>
+                            <div class="poll-bar-container">
+                                <div class="poll-bar" data-option="canada"></div>
+                            </div>
+                            <span class="poll-percentage" data-percentage="canada"></span>
+                        </button>
+                        <button class="poll-option" onclick="votePoll('mexico')">
+                            <span class="poll-option-text">🌮 Mexico Somewhere</span>
+                            <div class="poll-bar-container">
+                                <div class="poll-bar" data-option="mexico"></div>
+                            </div>
+                            <span class="poll-percentage" data-percentage="mexico"></span>
+                        </button>
+                    </div>
+                    <div class="poll-message" id="poll-message">Elige un destino ✨</div>
+                </div>
+
+                <!-- Final Message -->
+                <div class="bento-card message-card">
+                    <div class="message-content">
+                        <p class="message-text">"Feliz San Valentin Capibarini Cocosini! Espero la pases bien aunque sea con este mini wrapped! :) ♡"</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
