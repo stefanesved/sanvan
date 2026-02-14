@@ -540,19 +540,19 @@ function initScratchCard() {
         isScratching = true;
         const pos = getMousePos(e);
         scratch(pos.x, pos.y);
-    });
+    }, { passive: false });
     
     canvas.addEventListener('touchmove', (e) => {
         e.preventDefault();
         if (!isScratching) return;
         const pos = getMousePos(e);
         scratch(pos.x, pos.y);
-    });
+    }, { passive: false });
     
     canvas.addEventListener('touchend', (e) => {
         e.preventDefault();
         isScratching = false;
-    });
+    }, { passive: false });
 }
 
 // Animate moment bars
